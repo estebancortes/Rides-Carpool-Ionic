@@ -1,0 +1,39 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Document Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of documents" (click)="openActionSheet()">
+    <ion-item>
+      <ion-thumbnail class="ion-thumbnail">
+        <ion-icon *ngIf="!photo" name="{{item.icon}}" expand="icon-only" class="icon-thumbnail"></ion-icon>
+        <ion-img *ngIf="photo" [src]="photo"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+      </ion-label>
+    </ion-item>
+    <div class="card_bottom_item">
+      <h2>{{item.name}}</h2>
+    </div>
+  </ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Card number</ion-label>
+      <ion-input type="text" [(ngModel)]="CardNumber" placeholder="1234 625 325"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Expiration Date</ion-label>
+      <ion-input type="text" [(ngModel)]="ExpirationDate" placeholder="MM/DD/YYY"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

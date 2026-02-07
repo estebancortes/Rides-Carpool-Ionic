@@ -1,0 +1,126 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Opciones de pasajeros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header mode="ios">
+    <ion-label>Viaje de ida</ion-label>
+  </ion-list-header>
+  <ion-list>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="6">
+        <ion-item lines="none">
+          <ion-text slot="start" class="ion-no-margin">Numero de pasajeros</ion-text>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-row>
+          <ion-col>
+            <ion-button fill="clear" (click)="updateCart('remove','onward')" color="danger">
+              <ion-icon slot="icon-only" name="remove-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-input class="ion-padding-horizontal textUnits ion-text-center"
+              [(ngModel)]="onwardRideDetails.passengerCount" readonly>
+            </ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-button fill="clear" (click)="updateCart('add','onward')" color="success">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-item>
+      <ion-icon name="car" color="secondary" slot="start"></ion-icon>
+      <ion-label>
+        <ion-text>Asiento del medio disponible </ion-text>
+      </ion-label>
+      <ion-icon [color]="onwardRideDetails.middleSeat? 'success':'danger'" expand="icon-only" slot="end"
+        [name]="onwardRideDetails.middleSeat?'checkmark-circle':'close-circle'">
+      </ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="flash" color="secondary" slot="start"></ion-icon>
+      <ion-label>
+        <ion-text>Booking instantaneo</ion-text>
+      </ion-label>
+      <ion-icon [color]="onwardRideDetails.instantBook? 'success':'danger'" expand="icon-only" slot="end"
+        [name]="onwardRideDetails.instantBook?'checkmark-circle':'close-circle'">
+      </ion-icon>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="returnRideDetails.passengerCount">
+    <ion-list-header mode="ios">
+      <ion-label>Viaje de retorno</ion-label>
+    </ion-list-header>
+    <ion-list>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="6">
+          <ion-item lines="none">
+            <ion-text slot="start" class="ion-no-margin">Numero de pasajeros</ion-text>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-row>
+            <ion-col>
+              <ion-button fill="clear" (click)="updateCart('remove','return')" color="danger">
+                <ion-icon slot="icon-only" name="remove-circle-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-input class="ion-padding-horizontal textUnits ion-text-center"
+                [(ngModel)]="returnRideDetails.passengerCount" readonly>
+              </ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-button fill="clear" (click)="updateCart('add','return')" color="success">
+                <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-icon name="car" color="secondary" slot="start"></ion-icon>
+        <ion-label>
+          <ion-text>Asiento del medio disponible</ion-text>
+        </ion-label>
+        <ion-icon [color]="returnRideDetails.middleSeat? 'success':'danger'" expand="icon-only" slot="end"
+          [name]="returnRideDetails.middleSeat?'checkmark-circle':'close-circle'">
+        </ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="flash" color="secondary" slot="start"></ion-icon>
+        <ion-label>
+          <ion-text>Booking instantaneo</ion-text>
+        </ion-label>
+        <ion-icon [color]="returnRideDetails.instantBook? 'success':'danger'" expand="icon-only" slot="end"
+          [name]="returnRideDetails.instantBook?'checkmark-circle':'close-circle'">
+        </ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-list-header mode="ios">
+    <ion-label>Tu mensaje a los pasajeros</ion-label>
+  </ion-list-header>
+  <ion-list>
+    <ion-item class="ion-padding-horizontal">
+      <ion-textarea readonly class="ion-text-justify" value={{placeholderText}}></ion-textarea>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer class="ion-padding">
+  <ion-toolbar>
+    <ion-button expand="block" color="secondary" type="submit" class="ion-text-capitalize" (click)="saveData()">Save
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

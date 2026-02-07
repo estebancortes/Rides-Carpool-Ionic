@@ -1,0 +1,8 @@
+{
+  "name": "carpool",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

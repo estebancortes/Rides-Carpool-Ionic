@@ -1,0 +1,118 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title class="ion-text-center">
+      Rides Carpool
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="secondary">
+    <ion-segment [(ngModel)]="tab" (ionChange)="changeSegmentValue($event)">
+      <ion-segment-button value="current">
+        <ion-label class="ion-text-uppercase">Ahora</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="history">
+        <ion-label class="ion-text-uppercase">Historial</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="segmentValue === 'current' && (dataService.offeredRides.length || dataService.bookedRides.length)"
+    class="ridesContent">
+    <div *ngIf="dataService.offeredRides.length" class="rideListContainer">
+      <ion-list-header class="ion-text-uppercase">
+        <ion-label>Tus Viajes ofrecidos</ion-label>
+      </ion-list-header>
+      <ion-card (click)="goToEditRide(ride)" class="rideComplete" *ngFor="let ride of dataService.offeredRides">
+        <ion-item>
+          <ion-label>
+            <h2>{{ride.onwardRideDetails.startDate}} - {{ride.onwardRideDetails.startTime}}</h2>
+            <p>{{ride.pickupAddress}}</p>
+            <p>{{ride.dropAddress}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="end" name="ellipsis-vertical-outline" expand="icon-only"></ion-icon>
+          <p>{{ride.onwardRideDetails.passengerCount}} seats available</p>
+        </ion-item>
+      </ion-card>
+    </div>
+    <div *ngIf="dataService.bookedRides.length" class="rideListContainer">
+      <ion-list-header class="ion-text-uppercase">
+        <ion-label>Tus viajes agendados</ion-label>
+      </ion-list-header>
+      <ion-card class="rideComplete" *ngFor="let ride of dataService.bookedRides">
+        <ion-item>
+          <ion-label>
+            <h2>{{ride.rideDetails.startDate}} - {{ride.rideDetails.startTime}}</h2>
+            <p>{{ride.pickupAddress}}</p>
+            <p>{{ride.dropAddress}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="end" name="ellipsis-vertical-outline" expand="icon-only"></ion-icon>
+          <p>{{ride.rideDetails.passengerCount}} seats booked</p>
+        </ion-item>
+      </ion-card>
+    </div>
+  </div>
+
+
+  <div *ngIf="segmentValue === 'current' && !dataService.offeredRides.length && !dataService.bookedRides.length"
+    class="currentContent">
+    <div class="overlay">
+      <h1 color="light">Vas para la Universidad?</h1>
+      <ion-text color="light" class=" ion-text-center">Comparte los costos de tu viaje con tu 
+        comunidad Universitaria</ion-text>
+      <ion-button fill="solid" class="btn1 ion-text-uppercase ion-margin-top" expand="round" color="secondary"
+        (click)="goToOfferRide()">
+        Ofrece un viaje
+      </ion-button>
+      <ion-button fill="clear" class="btn1 ion-text-uppercase findRide_button" expand="round" (click)="goToFindRide()">
+        Encuentra un aventon
+      </ion-button>
+    </div>
+  </div>
+
+  <div *ngIf="segmentValue === 'history'" class="historyContent">
+    <div>
+      <ion-card *ngFor="let item of data; let i of index" (click)="dismiss()" class="historyCards">
+        <div class="ion-padding-vertical">
+          <ion-item class="default_item">
+            <ion-icon name={{item.iconName}} class="icon_drop" slot="start"></ion-icon>
+            <ion-label>{{item.label}}</ion-label>
+          </ion-item>
+
+          <ion-item class="default_item">
+            <div class="vertical_dash" slot="start"></div>
+            <!-- <ion-thumbnail slot="end">
+            <img src="{{item.image}}">
+          </ion-thumbnail> -->
+            <ion-icon name="car-sport-outline" color="secondary" slot="start"></ion-icon>
+
+          </ion-item>
+
+          <ion-item class="default_item">
+            <ion-icon name="{{item.iconName2}}" class="icon_pin" slot="start"></ion-icon>
+            <ion-label>{{item.label2}}</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-text slot="start">{{item.text}}</ion-text>
+            <ion-text slot="end">{{item.text2}}</ion-text>
+          </ion-item>
+
+          <ion-item>
+            <ion-text slot="start">{{item.head}}</ion-text>
+            <!-- <rating slot="end" [(ngModel)]="starsCount" [max]="5" iconClass="star" fullIcon="☆" emptyIcon="★"
+              [readonly]="false" [disabled]="false" [required]="true" [float]="true"
+              [titles]="['one', 'two', 'three', 'four', 'five']" style="color:orange">
+            </rating> -->
+          </ion-item>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

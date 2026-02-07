@@ -1,0 +1,39 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Piensas hacer un viaje de retorno?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="flex">
+    <ion-list>
+      <ion-item class="ion-padding-horizontal">
+        <ion-label class="ion-text-center">
+          <ion-text class="ion-text-wrap">{{comingBack}}</ion-text>
+          <p>{{subheader}}</p>
+        </ion-label>
+      </ion-item>
+      <div class="centerContents">
+        <div class="image_Div"
+          [ngStyle]="{'background':'url( '+ confirmImage +')', 'background-size':'cover', 'background-position':'center'}">
+        </div>
+        <ion-item (click)="goForReturnRide()" class="ion-margin-vertical width100">
+          <ion-button expand="block" fill="solid" class="width" color="secondary">
+            Por supuesto!
+          </ion-button>
+        </ion-item>
+
+        <ion-item (click)="goForThanks()" class="width100">
+          <ion-button expand="full" fill="clear" class="width" color="secondary">
+            No, gracias
+          </ion-button>
+        </ion-item>
+      </div>
+
+    </ion-list>
+  </div>
+</ion-content>

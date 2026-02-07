@@ -1,0 +1,46 @@
+<!-- /**
+ * Car Pool starter (https://store.enappd.com/product/carpool-app-starter-ionic)
+ *
+ * Copyright © 2019-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source tree.
+ */ -->
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Inbox</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="tab" (ionChange)="changeSegmentValue($event)">
+      <ion-segment-button value="message">
+        <ion-label class="ion-text-uppercase">MESSAGES</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="notification">
+        <ion-label class="ion-text-uppercase">NOTIFICATIONS</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="buttonValue === 'message'">
+    <app-chatlist></app-chatlist>
+  </div>
+  <div *ngIf="buttonValue === 'notification'">
+    <ion-list lines="full" class="margin-top">
+
+      <ion-item class="paddingVertical" *ngFor="let notification of notifications"
+        (click)="notificationAlert(notification)">
+        <ion-avatar slot="start">
+          <img [src]="notification.iconUrl">
+        </ion-avatar>
+
+        <div class="notificationText">
+          <h4 class="ion-text-capitalize ion-no-margin notificationHeading"> {{notification.title}}</h4>
+          <span class="descText ion-text-nowrap">{{notification.subtitle}}</span>
+        </div>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>

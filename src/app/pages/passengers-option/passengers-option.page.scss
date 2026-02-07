@@ -1,0 +1,31 @@
+
+ion-segment-button {
+  min-width: 20px;
+  max-width: 30px;
+  --indicator-color-checked: transparent;
+  --color-checked: #00bcd4;
+  --color: #00bcd4;
+  border-color: #ffffff00;
+}
+.textUnits {
+  font-size: 24px;
+}
+ion-input {
+  --placeholder-color: var(--ion-color-success-shade);
+  --placeholder-opacity: 1;
+  --color: var(--ion-color-success-shade);
+}
+ion-item {
+  --highlight-color-focused: transparent;
+}
+ion-text {
+  color: #006064;
+  font-size: 14px;
+}
+ion-button {
+  --border-radius: 15px;
+  height: 44px;
+}
+.toastBack {
+  --background: #00bcd4;
+}

@@ -1,0 +1,42 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ruta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label class="ion-text-center ion-padding-horizontal">
+        <ion-text class="ion-text-wrap ion-padding-horizontal">{{header}}</ion-text>
+      </ion-label>
+    </ion-item>
+    <map-direction [zoom]="zoom" [origin]="locationService.pickupLocation" [destination]="locationService.dropLocation"
+      [markerOptions]="markerOptions" [stopovers]="dataService.stopovers"></map-direction>
+    <div class="ion-padding-horizontal">
+      <ion-item>
+        <ion-label>
+          <ion-text>Paradas</ion-text>
+        </ion-label>
+      </ion-item>
+      <ion-list *ngIf="dataService.stopovers && dataService.stopovers.length">
+        <ion-item *ngFor="let stopover of dataService.stopovers">
+          <ion-text>{{stopover.address}}</ion-text>
+        </ion-item>
+      </ion-list>
+      <ion-item *ngIf="!(dataService.stopovers && dataService.stopovers.length)">
+        <ion-text>No tienes paradas en tu viaje</ion-text>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
+<ion-footer class="ion-padding">
+  <ion-toolbar>
+    <ion-button expand="block" fill="solid" color="secondary" type="submit" (click)="goForDate()">Esta bien para mi !
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,39 @@
+
+<ion-content>
+  <div class="full-content">
+    <ion-card class="ion-no-margin ion-margin-top" class="signUpCard">
+      <ion-card-header color="secondary" class="cardHeader">
+        <ion-card-title class="headerText"><b>Registrarse</b> con<br />
+          email y contraseña
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content class="cardContents ion-no-padding ion-margin-top">
+        <ion-list>
+          <ion-item lines="none">
+            <ion-input class="placeholdertext inputField" type="text" placeholder="name@example.com"
+              [(ngModel)]="email">
+            </ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-input class="placeholdertext inputField" type="password" placeholder="Password" [(ngModel)]="password"
+              clearInput></ion-input>
+          </ion-item>
+
+          <div class="ion-padding">
+            <ion-button color="secondary" expand="block" class="btnSubmit" (click)="register()">Registrarse
+              
+            </ion-button>
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-text-center">
+  <div class="contentBgColor ion-padding-bottom ion-padding-top" (click)="login()">
+    <ion-label class="footerBottomText">Already have an account? <b>Sign In</b></ion-label>
+  </div>
+</ion-footer>

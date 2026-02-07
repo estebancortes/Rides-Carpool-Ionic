@@ -1,0 +1,46 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="flex">
+    <ion-button expand="round" color="tertiary">
+      <ion-icon slot="start" name="logo-facebook" expand="icon-only" color="light"></ion-icon>
+      <span slot="end">Inicia con facebook</span>
+    </ion-button>
+
+    <div class="or_with_Line">
+      <hr color="dark">
+      <p>or</p>
+      <hr color="dark">
+    </div>
+    <div class="Input_Fields ion-padding">
+      <ion-item mode="md" lines="none">
+        <ion-input type="text" [(ngModel)]="email" placeholder="E-mail" mode="md" class="inputField"></ion-input>
+      </ion-item>
+      <ion-item mode="md" lines="none">
+        <ion-input [(ngModel)]="password" type="password" placeholder="Password" mode="md" class="inputField"></ion-input>
+      </ion-item>
+    </div>
+
+
+    <ion-button expand="round" color="secondary" class="ion-margin-top" (click)="goforHome()">
+      <span slot="end">Inicia sesión</span>
+    </ion-button>
+    <ion-text class="ion-text-center" color="secondary" (click)="goforForgotPassword()">Olvidaste tu contraseña?
+    </ion-text>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" color="secondary" fill="clear" (click)="goforSignupPage()">
+      <span slot="end">No eres un miembro? Registrate gratis</span>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

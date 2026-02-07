@@ -1,0 +1,24 @@
+
+ion-label {
+  ion-text {
+    color: #006064;
+    font-weight: bold;
+  }
+}
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+agm-map {
+  height: 400px;
+}
+#map {
+  height: 100%;
+}
+ion-footer {
+  ion-button {
+    --border-radius: 16px;
+    height: 40px;
+    text-transform: none;
+  }
+}

@@ -1,0 +1,124 @@
+<!-- /**
+ * Car Pool starter (https://store.enappd.com/product/carpool-app-starter-ionic)
+ *
+ * Copyright © 2019-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source tree.
+ */ -->
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card class="profile-card">
+      <ion-item (click)="takeProfilePic()" lines="none">
+        <ion-avatar slot="start" [ngStyle]="{'background-image':'url('+ dataService.userProfileData.image +')'}">
+        </ion-avatar>
+        <ion-text color="secondary" class="ion-padding-start">Choose profile photo</ion-text>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+  <ion-list>
+    <ion-list-header class="ion-text-capitalize">
+      <ion-label>Gender</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="gender" placeholder='Male'></ion-input>
+    </ion-item>
+
+    <ion-list-header class="ion-text-capitalize">
+      <ion-label>First Name</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="firstName" placeholder='First Name'></ion-input>
+    </ion-item>
+
+    <ion-list-header class="ion-text-capitalize">
+      <ion-label>Last Name</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="lastName" placeholder='Last Name'></ion-input>
+    </ion-item>
+
+    <ion-list-header class="ion-text-capitalize">
+      <ion-label>Year of birth</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="birthYear" placeholder='Year of birth'></ion-input>
+    </ion-item>
+
+    <ion-list-header class="ion-text-capitalize">
+      <ion-label>Your Bio</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="bio" placeholder='Describe yourself...'></ion-input>
+    </ion-item>
+
+    <ion-item class="buttonClass">
+      <ion-button type="submit" expand="block" color="secondary" class="ion-margin-vertical"
+        (click)="saveInfo()">Save profile info</ion-button>
+    </ion-item>
+
+    <ion-list-header class="ion-text-capitalize">
+      <ion-label>Email</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="email" placeholder='Email Address'></ion-input>
+    </ion-item>
+
+    <ion-item class="buttonClass">
+      <ion-button type="submit" expand="block" color="secondary" class="ion-margin-vertical"
+        (click)="changeEmail()">Save Email</ion-button>
+    </ion-item>
+
+    <ion-list-header class="ion-text-capitalize">
+      <ion-label>Mobile Number</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="mobile.region" placeholder='Colombia(+57)'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="mobile.phone" placeholder='3168680824'></ion-input>
+    </ion-item>
+
+    <ion-item class="buttonClass">
+      <ion-button type="submit" expand="block" color="secondary" class="ion-margin-vertical"
+        (click)="saveInfo()">Save mobile number</ion-button>
+    </ion-item>
+
+    <!-- <div *ngFor="let data of bioData">
+      <ion-list-header class="ion-text-capitalize">
+        <ion-label>{{data.header}}</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label position="stacked" *ngIf="data.label" color="medium">{{data.label}}</ion-label>
+        <ion-input type="text" [(ngModel)]="data.model" placeholder={{data.model}}></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="data.button" class="buttonClass">
+        <ion-button type="submit" expand="block" color="secondary" class="ion-margin-vertical"
+          (click)="showDataSavedToast()">
+          {{data.button}}</ion-button>
+      </ion-item>
+
+
+      <ion-item *ngIf="data.label1">
+        <ion-label position="stacked" color="medium">{{data.label1}}</ion-label>
+        <ion-input type="text" [(ngModel)]="data.model1" placeholder={{data.model1}}></ion-input>
+      </ion-item>
+      <ion-item *ngIf="data.button1" class="buttonClass">
+        <ion-button type="submit" expand="block" color="secondary" class="ion-margin-vertical">{{data.button1}}
+        </ion-button>
+      </ion-item>
+    </div> -->
+
+  </ion-list>
+</ion-content>

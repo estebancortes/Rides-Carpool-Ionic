@@ -1,0 +1,79 @@
+
+<ion-header *ngIf="dataService.currentTab==='home'">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-back-button text=""></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <h1>Encontrar un servicio</h1>
+  </ion-item>
+  <ion-fab vertical="top" horizontal="end" slot="fixed" (click)="swapAddress()">
+    <ion-fab-button color="light">
+      <ion-img src="assets/image/repeat.png"></ion-img>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list>
+    <ion-item>
+      <ion-label class="ion-text-start">
+        <ion-text> </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-card class="card_pickup1" (click)="selectPickup()">
+    <ion-item>
+      <ion-icon slot="start" expand="icon-only" name="search"></ion-icon>
+      <ion-label class="ion-text-center">
+        <h2 color="dark">Lugar de recogida</h2>
+        <p *ngIf="pickupAddress.value">{{pickupAddress.value}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card class="card_pickup1" (click)="selectDrop()">
+    <ion-item>
+      <ion-icon slot="start" expand="icon-only" name="search"></ion-icon>
+      <ion-label class="ion-text-center">
+        <h2 color="dark">Sede de Destino</h2>
+        <p *ngIf="dropAddress.value">{{dropAddress.value}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+
+  <!-- <ion-card class="card_pickup1" (click)="selectDrop()" *ngIf="!pickup">
+    <ion-item>
+      <ion-icon slot="start" expand="icon-only" name="search"></ion-icon>
+      <ion-label class="ion-text-center">
+        <h2 color="dark">Drop-off Location</h2>
+        <p *ngIf="dropAddress.value">{{dropAddress.value}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card class="card_pickup1" (click)="selectPickup()" *ngIf="!pickup">
+    <ion-item class="mapcardItem">
+      <ion-icon slot="start" expand="icon-only" name="search"></ion-icon>
+      <ion-label class="ion-text-center">
+        <h2 color="dark">Pick-Up Location</h2>
+        <p *ngIf="pickupAddress.value">{{pickupAddress.value}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card> -->
+
+  <div class="flex ion-justify-content-center">
+    <ion-label class="date-label" (click)="goForDateTime('findRide')">
+      <ion-text>Fecha y Hora</ion-text>
+      <p *ngIf="!this.dataService.findRideDetails.startDate">Today, {{rightTime}}</p>
+      <p *ngIf="this.dataService.findRideDetails.startDate">{{this.dataService.findRideDetails.startDate}} ,
+        {{this.dataService.findRideDetails.startTime}}</p>
+    </ion-label>
+  </div>
+  <div class=" ion-padding width">
+    <ion-button color="secondary" expand="block" shape="rounded" (click)="goForSearchResults()">Buscar</ion-button>
+  </div>
+</ion-content>

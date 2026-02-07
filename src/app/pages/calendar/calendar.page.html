@@ -1,0 +1,37 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Selecciona una fecha</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-fab *ngIf="showFabButton" vertical="bottom" horizontal="end" slot="fixed" (click)="goToDrop(myDate)">
+    <ion-fab-button color="secondary">
+      <ion-icon name="arrow-forward" mode="md"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="flex">
+    <ion-list class="width padding_top">
+      <ion-item>
+        <ion-label class="ion-text-center">
+          <ion-text *ngIf="onward">Cuando estaras partiendo?</ion-text>
+          <ion-text *ngIf="!onward">Cuando volveras?</ion-text>
+          <p>Selecciona una fecha y hora</p>
+          <ion-icon name="arrow-down" expand="icon-only" color="secondary" class="drop"></ion-icon>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+    <ion-item lines="none" class="widthCalendar">
+      <ion-label>Selecciona una fecha y hora</ion-label>
+      <ion-datetime displayFormat="D MMM YYYY H:mm" pickerFormat="MMM DD, YYYY HH:mm" min="2020" max="2025"
+        minuteValues="0,15,30,45" value="" [(ngModel)]="myDate" (ionChange)="onChange()">
+      </ion-datetime>
+    </ion-item>
+  </div>
+
+</ion-content>

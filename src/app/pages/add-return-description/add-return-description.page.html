@@ -1,0 +1,28 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Algo mas?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="flex">
+    <ion-list>
+      <ion-item>
+        <ion-text>{{head}}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Tu mensaje para los pasajeros</ion-label>
+        <ion-textarea rows="6" cols="10" placeholder={{placeholder}} [(ngModel)]="returnDesc"></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer class="ion-padding">
+  <ion-toolbar>
+    <ion-button mode="md" color="secondary" expand="block" (click)="rideSuccess()">CONTINUAR</ion-button>
+  </ion-toolbar>
+</ion-footer>

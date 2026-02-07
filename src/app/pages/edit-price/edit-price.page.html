@@ -1,0 +1,30 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar precio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label class="ion-text-center">
+        <ion-text class="ion-text-wrap">{{header}}</ion-text>
+      </ion-label>
+    </ion-item>
+    <div class="flex">
+      <ion-item>
+        <ion-label>
+          <p class="ion-text-wrap">{{description}}</p>
+        </ion-label>
+      </ion-item>
+    </div>
+    <div class="buttonDiv">
+      <ion-button expand="block" color="secondary" (click)="gotoeditAmount()" class="ion-text-capitalize">editar el precio
+      </ion-button>
+    </div>
+  </ion-list>
+</ion-content>

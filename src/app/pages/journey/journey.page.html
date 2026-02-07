@@ -1,0 +1,38 @@
+<!-- /**
+ * Car Pool starter (https://store.enappd.com/product/carpool-app-starter-ionic)
+ *
+ * Copyright © 2019-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source tree.
+ */ -->
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Journey & Stops</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="mapClass">
+    <map-direction [zoom]="zoom" [origin]="pickup" [destination]="dropoff" [markerOptions]="markerOptions"
+      [stopovers]="stopovers"></map-direction>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let journeyDetails of rideData">
+      <ion-icon mode="ios" name={{journeyDetails.icon}} expand="icon-only" slot="start" color="danger"></ion-icon>
+      <ion-label>
+        <ion-text color="secondary">{{journeyDetails.head}}</ion-text>
+        <p class="ion-text-wrap">{{journeyDetails.detail}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="secondary" class="ion-text-uppercase">Save</ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,61 @@
+
+<ion-header color="secondary">
+  <ion-toolbar color="secondary">
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="secondary">
+    <div class="profileImage">
+      <ion-avatar [ngStyle]="profileInfo?.profilePic ? {'background-image':'url('+profileInfo?.profilePic+')'} : {'background-image':'url(../../assets/image/user3.jpeg)'}">
+      </ion-avatar>
+      <ion-item color="secondary">
+        <ion-label *ngIf="profileInfo?.firstName">
+          <h2 color="light">{{profileInfo?.firstName + ' ' + profileInfo?.lastName}}</h2>
+          
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-toolbar>
+  <ion-toolbar color="secondary">
+    <ion-segment [(ngModel)]="tab" (ionChange)="changeSegmentValue($event)">
+      <ion-segment-button value="details">
+        <ion-label>Informacion</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="account">
+        <ion-label>Cuenta</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="segmentButton === 'details'">
+    <div *ngFor="let profileData of profileInfoDetails">
+      <ion-list>
+        <ion-list-header>
+          <ion-label>{{profileData.header}}</ion-label>
+        </ion-list-header>
+        <ion-item *ngIf="profileData.headerText" (click)="goForProfileEdit(profileData.headerText)">
+          <p class="capitalize withMargin">{{profileData.headerText}}</p>
+        </ion-item>
+        <ion-item *ngIf="profileData.headerText1" (click)="goForPreferences(profileData.headerText1)">
+          <p class="capitalize withMargin">{{profileData.headerText1}}</p>
+        </ion-item>
+        <ion-item *ngIf="profileData.headerText2" (click)="goForEmailVerification(profileData.headerText2)">
+          <p class="capitalize withMargin">{{profileData.headerText2}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+  <div *ngIf="segmentButton === 'account' ">
+    <ion-card>
+      <ion-item class="ion-padding">
+        <ion-label>
+          <ion-text class="ion-text-justify ion-text-wrap" color="secondary">
+            Disculpa, no se encontraron detalles de la cuenta! Por favor intenta mas tarde.
+          </ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,19 @@
+
+<ion-content>
+  <ion-card class="card_content">
+    <div class="image_set"
+      [ngStyle]="{'background':'url(assets/image/login.jpg)','background-size':'cover','background-position':'center'}">
+      <div class="overlay">
+        <p class="title_center">RIDES Carpool</p>
+      </div>
+    </div>
+    <ion-card-subtitle class="ion-text-center ion-padding">Carpooling te facilita el viaje
+    </ion-card-subtitle>
+    <ion-card-content class="button_row">
+      <ion-button fill="solid" class="ion-margin-bottom" expand="round" color="secondary" (click)="gotosignup()">Registrarse
+      </ion-button>
+      <ion-button fill="clear" expand="round" color="secondary" (click)="gotoLoginformHome()">Iniciar sesion
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

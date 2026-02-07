@@ -1,0 +1,118 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add new vehicle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding-top">
+    <ion-list>
+
+      <div>
+        <ion-list-header>
+          <ion-label>Marca de Vehiculo</ion-label>
+        </ion-list-header>
+        <ion-card>
+          <ion-item>
+            <ion-select interface="popover" placeholder="Seleccionar vehiculo" [(ngModel)]="selectedBrand">
+              <ion-select-option value={{selectData.name}} *ngFor="let selectData of brands">
+                {{selectData.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card>
+      </div>
+
+      <div>
+        <ion-list-header>
+          <ion-label>Modelo</ion-label>
+        </ion-list-header>
+        <ion-card>
+          <ion-item>
+            <ion-select interface="popover" placeholder="Seleccionar Modelo" [(ngModel)]="selectedModelo">
+              <ion-select-option value={{selectData.name}} *ngFor="let selectData of modelo">
+                {{selectData.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card>
+      </div>
+
+      <div>
+        <ion-list-header>
+          <ion-label>Color</ion-label>
+        </ion-list-header>
+        <ion-card>
+          <ion-item>
+            <ion-select interface="popover" placeholder="Seleccionar color" [(ngModel)]="selectedColor">
+              <ion-select-option value={{selectData.name}} *ngFor="let selectData of color">
+                {{selectData.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card>
+      </div>
+
+      <div>
+        <ion-list-header>
+          <ion-label>Booking Type</ion-label>
+        </ion-list-header>
+        <ion-card>
+          <ion-item>
+            <ion-select interface="popover" placeholder="Select Booking Type" [(ngModel)]="selectedBookingType">
+              <ion-select-option value={{selectData.name}} *ngFor="let selectData of bookingType">
+                {{selectData.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card>
+      </div>
+
+      <div>
+        <ion-list-header>
+          <ion-label>Modelo</ion-label>
+        </ion-list-header>
+        <ion-card>
+          <ion-item>
+            <ion-select interface="popover" placeholder="Seleccionar Modelo" [(ngModel)]="selectedYear">
+              <ion-select-option value={{selectData.name}} *ngFor="let selectData of year">
+                {{selectData.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card>
+      </div>
+
+      <!-- <div *ngFor="let item of newvehicleData" class="ion-margin-top">
+        <ion-list-header>
+          <ion-label>{{item.label}}</ion-label>
+        </ion-list-header>
+        <ion-card>
+          <ion-item>
+            <ion-select interface="popover" placeholder={{item.placeholder}} [(ngModel)]="item.name"
+              (ionChange)="getValue(item.name)">
+              <ion-select-option value={{selectData.name}} *ngFor="let selectData of item.data;let  i of index">
+                {{selectData.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card>
+      </div> -->
+    </ion-list>
+  </div>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>License PLate</ion-label>
+    </ion-list-header>
+    <ion-card>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="license" placeholder="License PLate No"></ion-input>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>
+<ion-footer (click)="openpageTRansition()">
+  <div class="footer_center_item">
+    <ion-button expand="full" color="secondary" (click)="addVehicle()">Complete</ion-button>
+
+  </div>
+</ion-footer>

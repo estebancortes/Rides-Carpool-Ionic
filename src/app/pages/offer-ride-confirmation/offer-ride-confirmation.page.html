@@ -1,0 +1,18 @@
+
+<ion-content>
+  <div class="flex">
+    <div class="imageDiv"
+      [ngStyle]="{'background':'url( '+ confirmImage +')', 'background-size':'contain', 'background-position':'center', 'background-repeat':'no-repeat'}">
+    </div>
+    <ion-item>
+      <ion-text *ngIf="dataService.bookRideConfirmation">Tu solicitud ya esta publicada! Un conductor te contactara por llamada pronto!
+        </ion-text>
+      <ion-text *ngIf="!dataService.bookRideConfirmation">Tu oferta esta en linea, los pasajeros podran tomar tus cupos!
+        </ion-text>
+    </ion-item>
+
+    <div (click)="onRideSuccess()" class="width">
+      <ion-button expand="round" type="submit" color="light">Ok</ion-button>
+    </div>
+  </div>
+</ion-content>
