@@ -1,0 +1,51 @@
+# Sensitive files - DO NOT COMMIT
+Keypass.txt
+private_key.pepk
+.env
+.env.local
+.env.*.local
+.env.prod
+
+# Environment configuration files with API keys and secrets
+src/environments/environment*.ts
+!src/environments/environment.example.ts
+
+# Node modules and dependencies
+node_modules/
+npm-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Build artifacts
+dist/
+/dist/
+www/
+build/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+test-results/
+
+# Capacitor
+.capacitor/
+android/
+ios/
+
+# Development
+.angular/
+.next/

@@ -3,12 +3,12 @@ export const environment = {
   production: false,
   GOOGLE_MAPS_API_KEY: 'YOUR_GOOGLE_MAPS_API_KEY',
   firebaseConfig: {
-    apiKey: "AIzaSyCJqPs_Y8gE10ilci8cNq61hEUZoPPRr-Y",
-    authDomain: "carpool-5f654.firebaseapp.com",
-    projectId: "carpool-5f654",
-    storageBucket: "carpool-5f654.appspot.com",
-    messagingSenderId: "254126907121",
-    appId: "1:254126907121:web:68e60233f009951d921350"
+    apiKey: "YOUR_FIREBASE_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
   },
   country: 'CO',
   CHAT_DATA: [{

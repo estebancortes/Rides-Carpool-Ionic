@@ -1,8 +1,8 @@
 {
-  "name": "carpool",
+  "name": "rides-carpool",
   "version": "2.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Esteban Cortes",
+  "homepage": "",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -5,7 +5,7 @@ export const environment = {
   country: 'CO',
   CHAT_DATA: [{
     name: 'DAVID CORTES',
-    image: 'assets/chat/enappd.png',
+    image: 'assets/chat/chat1.jpg',
     description: ' Great driver',
     count: '2',
     time: '11:32 PM',
@@ -436,7 +436,7 @@ export const environment = {
     model: 'Male'
   }, {
     header: 'First name',
-    model: 'Enappd'
+    model: 'John'
   }, {
     header: 'Last name',
     model: 'Youstart'
@@ -450,7 +450,7 @@ export const environment = {
   }, {
     header: 'email',
     label: 'Email',
-    model: 'store.enappd.com',
+    model: 'user@example.com',
     button: 'Save email'
   }, {
     header: 'Mobile number',

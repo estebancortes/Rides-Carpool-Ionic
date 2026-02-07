@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.enappd.carpool" version="2.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Carpool</name>
-    <description>Carpool App</description>
-    <author email="support@enappd.com" href="https://enappd.com/">Enappd Team</author>
+<widget id="com.estebancortes.ridescarpool" version="2.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Rides Carpool</name>
+    <description>A comprehensive ridesharing and carpooling application</description>
+    <author email="contact@example.com" href="">Author</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
