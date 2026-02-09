@@ -41,10 +41,24 @@ iomic cordova platform add ios
 - **Google Maps API Key**: Get one from [Google Cloud Console](https://console.cloud.google.com/apis/library/maps-backend.googleapis.com)
 - **Firebase Credentials**: Get from your [Firebase Console](https://console.firebase.google.com)
 
-Update the following files with your credentials:
-- `src/environments/environment.ts` - Development environment
-- `src/environments/environment.prod.ts` - Production environment  
-- `src/index.html` - Replace `YOUR_GOOGLE_MAPS_API_KEY` in the script tag
+Update these tracked files with placeholders only:
+- `src/environments/environment.ts` - Development placeholders
+- `src/environments/environment.prod.ts` - Production placeholders
+- `src/index.html` - Keep `YOUR_GOOGLE_MAPS_API_KEY` placeholder in the script tag
+
+Create a local-only production config file for real keys:
+
+```bash
+cp src/environments/environment.prod.local.example.ts src/environments/environment.prod.local.ts
+```
+
+Then set your real key in `src/environments/environment.prod.local.ts` and build with:
+
+```bash
+npm run build:prod-local
+```
+
+`src/environments/environment.prod.local.ts` is gitignored and will not be committed.
 
 ## Build & Run
 

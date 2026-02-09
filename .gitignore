@@ -12,6 +12,7 @@ keystore.jks
 # Environment configuration files with API keys and secrets
 src/environments/environment*.ts
 !src/environments/environment.example.ts
+!src/environments/environment.prod.local.example.ts
 
 # Node modules and dependencies
 node_modules/
