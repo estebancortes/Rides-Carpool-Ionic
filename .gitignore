@@ -1,6 +1,9 @@
 # Sensitive files - DO NOT COMMIT
 Keypass.txt
 private_key.pepk
+keystore.jks
+*.jks
+*.pepk
 .env
 .env.local
 .env.*.local
