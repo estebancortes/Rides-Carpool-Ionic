@@ -1,6 +1,6 @@
 # Rides Carpool App
 
-A comprehensive ridesharing/carpooling mobile application built with Ionic 5 and Angular. Connect drivers and passengers for shared rides with real-time mapping, chat functionality, and booking management.
+A comprehensive ridesharing/carpooling mobile application built with Ionic 5 and Angular. Connect University Students from Unisangil University in roles of drivers and passengers for shared rides with real-time mapping, chat functionality, and booking management.
 
 **Note:** This project is no longer actively maintained.
 
